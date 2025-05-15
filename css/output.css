@@ -218,6 +218,9 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .-z-50 {
+    z-index: calc(50 * -1);
+  }
   .z-30 {
     z-index: 30;
   }
@@ -271,6 +274,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .w-screen {
+    width: 100vw;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -387,6 +393,15 @@
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+  .pt-15 {
+    padding-top: calc(var(--spacing) * 15);
+  }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
+  }
+  .pt-30 {
+    padding-top: calc(var(--spacing) * 30);
   }
   .text-center {
     text-align: center;

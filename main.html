@@ -16,37 +16,48 @@
         content.classList.add('opacity-100', 'translate-y-0');
       });
     })
- 
-  function scrollToProjects(){
-    var getMeTo = document.getElementById("projectCards");
-    getMeTo.scrollIntoView({behavior: 'smooth'}, true);
-    getMeTo.classList.add('bg-amber-400', 'text-black');
 
-    setTimeout(() => {
-        getMeTo.classList.remove('bg-amber-400', 'text-black');
-    }, 1000);
-  }
-
-  function scrollToHome(){
+    function scrollToHome(){
     var getMeTo = document.getElementById("pfp");
     getMeTo.scrollIntoView({behavior: 'smooth'}, true);
   }
+ 
+    function scrollToProjects(){
+        var getMeTo = document.getElementById("projectCards");
+        getMeTo.scrollIntoView({behavior: 'smooth'}, true);
+        getMeTo.classList.add('bg-amber-400', 'text-black');
 
-  function bouncingPfp(){
-    var pfp = document.getElementById("pfp");
-    pfp.classList.add('animate-bounce');
+        setTimeout(() => {
+            getMeTo.classList.remove('bg-amber-400', 'text-black');
+        }, 1000);
+    }
 
-    // Remove the highlight after 2 seconds (2000 ms)
-    setTimeout(() => {
-        pfp.classList.remove('animate-bounce');
-    }, 1500);
-  }
+    function scrollToAbout(){
+        var getMeTo = document.getElementById("aboutMe");
+        getMeTo.scrollIntoView({behavior: 'smooth'}, true);
+        getMeTo.classList.add('bg-amber-400', 'text-black');
+
+        setTimeout(() => {
+            getMeTo.classList.remove('bg-amber-400', 'text-black');
+        }, 1000);
+    }
+  
+
+    function bouncingPfp(){
+        var pfp = document.getElementById("pfp");
+        pfp.classList.add('animate-bounce');
+
+        // Remove the highlight after 2 seconds (2000 ms)
+        setTimeout(() => {
+            pfp.classList.remove('animate-bounce');
+        }, 1500);
+    }
     
 </script>
 
 <body class="bg-white dark:bg-blue-950">
     
-    <nav class="flex flex-row sm:flex-row bg-blue-300 p-3 justify-between">
+    <nav class="fixed w-full top-0 z-50 flex flex-row sm:flex-row bg-blue-300 p-3 justify-between">
     <!-- <nav class="fixed top-0 w-full z-50 flex flex-row sm:flex-row bg-blue-300 p-3 justify-between"> -->
     <!-- <nav class="sticky top-0 bg-blue-300 p-3 z-30 flex flex-row sm:flex-row justify-between">    -->
         <h1 class="font-extrabold">KM.</h1>
@@ -54,7 +65,7 @@
         <div id="myLinks" class="content-between">
             <a class="font-semibold transition duration-100 ease-in hover:bg-blue-700 hover:text-white hover:p-1 hover:border-0 hover:rounded-md " href="javascript: scrollToHome()">Home</a>
             <a class="font-semibold transition duration-100 ease-in hover:bg-blue-700 hover:text-white hover:p-1 hover:border-0 hover:rounded-md " href="javascript: scrollToProjects()">Projects</a>
-            <a class="font-semibold transition duration-100 ease-in hover:bg-blue-700 hover:text-white hover:p-1 hover:border-0 hover:rounded-md " href="#about">About</a>
+            <a class="font-semibold transition duration-100 ease-in hover:bg-blue-700 hover:text-white hover:p-1 hover:border-0 hover:rounded-md " href="javascript: scrollToAbout()">About</a>
         </div>
     </nav>
 
@@ -68,7 +79,7 @@
 transition-timing-function: var(--default-transition-timing-function); /* cubic-bezier(0.4, 0, 0.2, 1) */
 transition-duration: var(--default-transition-duration); /* 150ms */ -->
 
-    <section id="introContent" class="opacity-0 translate-y-4 transition-all duration-700 delay-75 flex flex-col items-center dark:text-amber-50">
+    <section id="introContent" class="pt-30 opacity-0 translate-y-4 transition-all duration-700 delay-75 flex flex-col items-center dark:text-amber-50">
         
         <article class="flex flex-col items-center lg:flex-row lg:justify-between">
         <!-- Profil Picture -->
@@ -153,9 +164,9 @@ transition-duration: var(--default-transition-duration); /* 150ms */ -->
 
    
 
-    <section id="aboutMe" class="flex flex-col items-center my-3 mx-7 md:mx-56 dark:text-amber-50">
+    <section class="flex flex-col items-center my-3 mx-7 md:mx-56 dark:text-amber-50">
         <div class="flex flex-col">
-        <h2 id="headerRound" class="text-2xl text-center font-semibold ">About me</h2>
+        <h2 id="aboutMe" class="transition-colors duration-100 ease-in rounded-xl text-2xl text-center font-semibold ">About me</h2>
             <p class="text-sm ">
                 "I am a student at University of Ciputra in Application development major. I have been learning programming for about a year now. I am currently learning Java, HTML, CSS, and I am also interested in web development. I am always looking for new challenges and opportunities to learn more."
             </p>
@@ -165,8 +176,12 @@ transition-duration: var(--default-transition-duration); /* 150ms */ -->
             </p>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col items-center">
             <h2 class="text-2xl font-semibold">Get in touch!</h2>
+            <ul style="list-style-type:disc" class="flex flex-col lg:flex-row space-x-4 list-disc font-semibold ml-4">
+                <li>Email: keihanmuzaki0480@gmail.com</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/keihan-pradika-muzaki-61a43233b/"><u>Keihan Pradika Muzaki</u></a></li>
+            </ul>
 
         </div>
 
